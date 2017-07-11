@@ -10,7 +10,7 @@ node {
             println JWT_KEY_CRED_ID1
             println CONNECTED_APP_CONSUMER_KEY1
             println HUB_ORG1
-			println env.HUB_ORG1
+			println env.HUB_ORG
    
     def toolbelt = tool 'SFDX CLI'
     stage('checkout SCM'){
