@@ -16,4 +16,13 @@ node {
     stage('checkout SCM'){
     checkout scm
     }
+	withCredentials([file(credentialsId: JWT_KEY_CRED_ID1, variable: 'jwt_key_file')]) {
+        stage('Create Scratch Org') {
+
+           echo "started"
+            rc = bat returnStatus: true,script: "\"${toolbelt}/bin/sfdx\" force:auth:jwt:grant --clientid ${CONNECTED_APP_CONSUMER_KEY1} --username ${HUB_ORG1} --jwtkeyfile ${jwt_key_file} --setdefaultdevhubusername"
+            if (rc != 0) { error 'hub org authorization failed' }
+
+	}
+        }
 }
