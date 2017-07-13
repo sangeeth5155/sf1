@@ -14,7 +14,7 @@ node {
             println HUB_ORG1
 			println env.HUB_ORG
    
-    def toolbelt = tool 'SFDX CLI'
+    def toolbelt = tool 'sfdx'
     stage('checkout SCM'){
     checkout scm
     }
