@@ -1,3 +1,5 @@
+#!groovy
+import groovy.json.JsonSlurperClassic
 node {
      def SFDC_USERNAME
 
