@@ -22,7 +22,7 @@ node {
         stage('Create Scratch Org') {
 
            echo "started"
-            rc = bat returnStatus: true,script: "\"${toolbelt}/bin\bin\sfdx\" force:auth:jwt:grant --clientid ${CONNECTED_APP_CONSUMER_KEY1} --username ${HUB_ORG1} --jwtkeyfile ${jwt_key_file} --setdefaultdevhubusername"
+            rc = bat returnStatus: true,script: "\"${toolbelt}/bin/bin/sfdx\" force:auth:jwt:grant --clientid ${CONNECTED_APP_CONSUMER_KEY1} --username ${HUB_ORG1} --jwtkeyfile ${jwt_key_file} --setdefaultdevhubusername"
             if (rc != 0) { error 'hub org authorization failed' }
 
 	}
